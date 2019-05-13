@@ -1,0 +1,34 @@
+/*########GENERAL######3*/
+body{
+  text-align: center;
+}
+/*########TITULO#######*/
+h1{
+  font-family: Century Gothic;
+  font-size: 25px;
+  color: #5D6D7E  ;
+}
+/*#######LINEA_TEXTO_1#######*/
+#texto_lineas{
+  border-radius: 3px;
+  font-family: Century Gothic;
+}
+
+/*#######BOTON######*/
+#botoncito{
+  background-color: #5499C7;
+  border-radius: 3px;
+  font-family: helvetica;
+  border-color: #273746;
+  width: 110px;}
+}
+/*########DIBUJO#######*/
+#dibujito{
+  background-color: #ECE7E7;
+  border-radius: 3px;
+  border: 4px;
+}
+    /*######LADOS_DEL_DIBUJO#####*/
+    #lados_del_dibujo{ text-align: center; }
+    #p_arriba_derecha{text-align: center; font-family: 'Courier New', Courier, monospace; color: #2E86C1;}
+    #p_izquierda_abajo{font-family: 'Courier New', Courier, monospace; color: #D35400;  }
