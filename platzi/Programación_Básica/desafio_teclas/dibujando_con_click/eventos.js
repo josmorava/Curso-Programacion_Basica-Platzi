@@ -1,21 +1,47 @@
-/*-----variables----*/
-var d = document.getElementById("canvas_dibujando_click")
-var lienzo = d.getContext("2d");
-/*----bordes--*/
+var d = document.getElementById("canvas_dibujando_click");
+var trazo = d.getContext("2d");
+var xinic, yinic, xfinal, yfinal;
+var estado = false;
+var color = "pink";
 
-dibujar_linea("black",1,1,699,1) /*arriba*/
-dibujar_linea("black",1,1,1,399 )/*izquierda*/
-dibujar_linea("black",1,399,699,399)/*abajo*/
-dibujar_linea("black",699,1,699,699 ) /*derecha*
+document.addEventListener("mousedown", dibujoMouse);
+document.addEventListener("mouseup", dibujoMouseFinal);
+document.addEventListener("mousemove", dibujoMouseMove);
 
-
-/*---------funciones------*/
-function dibujar_linea(color, xinicial , yinicial , xfinal, yfinal)
+function dibujarLinea (color, xinic, yinic, xfinal, yfinal, trazo)
 {
-  lienzo.beginPath()
-  lienzo.strokeStyle = color;
-  lienzo.moveTo(xinicial,yinicial)
-  lienzo.lineTo(xfinal, yfinal)
-  lienzo.stroke()
-  lienzo.closePath()
+  trazo.beginPath();
+  trazo.strokeStyle = color;
+  trazo.lineWidth = 5;
+  trazo.moveTo(xinic, yinic);
+  trazo.lineTo(xfinal, yfinal);
+  trazo.closePath();
+  trazo.stroke();
+}
+
+function dibujoMouse(evento)
+{
+  console.log(evento);
+    if (estado = true);
+    xinic = evento.clientX;
+    yinic = evento.clientY;
+}
+
+function dibujoMouseMove(evento)
+{
+    console.log(evento);
+    if (estado == true)
+    {
+    dibujarLinea(color, xinic, yinic, evento.clientX, evento.clientY, trazo);
+    }
+    xinic = evento.clientX;
+    yinic = evento.clientY;
+}
+
+function dibujoMouseFinal(evento)
+{
+    console.log(evento);
+    if (estado = false);
+    xinic = evento.clientX;
+    yinic = evento.clientY;
 }
